@@ -329,6 +329,20 @@
     margin-bottom:8px;
   }
 
+  .scenario-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:14px;
+  }
+  .scenario-card{
+    background:var(--parchment-deep);
+    border-radius:10px;
+    padding:14px 16px;
+  }
+  .scenario-card .tag-pill{ margin-bottom:6px; }
+  .scenario-card p{ margin:0; font-size:13.5px; color:var(--ink-soft); }
+
   .reunion-banner{
     text-align:center;
     font-family:'IBM Plex Mono', monospace;
@@ -417,6 +431,8 @@
   }
   .budget-card .name{ font-family:'Fraunces', serif; font-weight:600; font-size:19px; }
   .budget-card .row{ display:flex; justify-content:space-between; font-size:13px; color:var(--ink-soft); margin-top:12px; }
+  .budget-card .row.sub{ font-size:12.5px; color:var(--ink-soft); margin-top:8px; opacity:0.85; }
+  .budget-card .row.sub:first-of-type{ margin-top:14px; }
   .budget-card .row.total{ margin-top:10px; padding-top:10px; border-top:1px dashed var(--paper-line); font-weight:600; color:var(--ink); font-size:15px; }
   .budget-card .note{ font-size:11px; font-style:italic; color:var(--pine); }
 
@@ -514,7 +530,7 @@
   <div class="hero-inner">
     <div class="hero-eyebrow"><span>Dossiê de Viagem</span><span class="rule"></span><span>Família · 2027</span></div>
     <h1>Espanha, <em>com o Matheus</em><br>em campo.</h1>
-    <p class="hero-sub">Dez dias acompanhando a 25ª edição do MICFootball na Costa Brava — passando antes por Madri, reunindo a família em Girona, e fechando com a Dansa de la Mort de Verges na Quinta-feira Santa.</p>
+    <p class="hero-sub">Seis dias acompanhando a 25ª edição do MICFootball na Costa Brava — passando antes por Madri, reunindo a família em Girona, com a Dansa de la Mort de Verges como um dos pontos altos da semana.</p>
 
     <div class="route-strip">
       <span class="route-chip">GRU</span><span class="route-arrow">✈</span><span class="route-chip">MAD</span>
@@ -538,19 +554,19 @@
     <div class="section-head">
       <span class="section-kicker">01 — Quem viaja</span>
       <h2>Seis passageiros, duas rotas.</h2>
-      <p>Andréa e Júlia embarcam em 19/03 rumo a Madri. Wanderley, Valquíria, Fernando e Arthur embarcam depois, em 22/03, direto para Girona — com mais tempo de descanso em casa antes da viagem, pensando especialmente no Wanderley e na Valquíria.</p>
+      <p>Andréa e Júlia embarcam em 19/03 rumo a Madri, seguindo depois para Girona de trem. Wanderley, Valquiria, Fernando e Arthur embarcam direto para Girona via Barcelona. Os dois grupos chegam em Girona no mesmo dia — 22/03 — e a família se reúne já na primeira noite.</p>
     </div>
     <div class="tags">
       <div class="tag"><div class="name">Andréa</div><div class="role">Tia</div><div class="route">SP → MAD · 19/03</div></div>
       <div class="tag"><div class="name">Júlia</div><div class="role">Prima</div><div class="route">SP → MAD · 19/03</div></div>
       <div class="tag"><div class="name">Wanderley</div><div class="role">Avô</div><div class="route">SP → BCN → GIRONA · 22/03</div></div>
-      <div class="tag"><div class="name">Valquíria</div><div class="role">Avó</div><div class="route">SP → BCN → GIRONA · 22/03</div></div>
+      <div class="tag"><div class="name">Valquiria</div><div class="role">Avó</div><div class="route">SP → BCN → GIRONA · 22/03</div></div>
       <div class="tag"><div class="name">Fernando</div><div class="role">Pai</div><div class="route">SP → BCN → GIRONA · 22/03</div></div>
       <div class="tag"><div class="name">Arthur</div><div class="role">Irmão</div><div class="route">SP → BCN → GIRONA · 22/03</div></div>
       <div class="tag dim"><div class="name">Matheus</div><div class="role">Atleta · já na Espanha</div><div class="route">Com a delegação</div></div>
       <div class="tag dim"><div class="name">Roberta</div><div class="role">Mãe · já na Espanha</div><div class="route">Com a delegação</div></div>
     </div>
-    <div class="callout soft" style="margin-top:26px;">Com dois idosos no grupo de Girona, esse espaçamento entre as duas partidas evita empilhar fusos e conexões — Wanderley e Valquíria ganham 3 dias a mais de descanso em casa antes de embarcar, e chegam já perto do início dos jogos.</div>
+    <div class="callout soft" style="margin-top:26px;">Reunir todo mundo em Girona já em 22/03 reduz a estadia no Airbnb e ainda deixa o dia 23/03 inteiro livre para conhecer Girona com calma, antes do início dos jogos em 24/03.</div>
   </section>
 
   <!-- HOSPEDAGEM GIRONA -->
@@ -562,14 +578,14 @@
     <div class="stay-card">
       <div class="stay-copy">
         <span class="stay-kicker">Mercadal, Girona</span>
-        <h3>Base para os dez dias</h3>
+        <h3>Base de 22 a 28/03 · 6 noites</h3>
         <p>Bairro central e plano, a poucos passos da estação de trem/ônibus e do centro histórico — ideal para as idas e vindas dos dias de jogo, sem depender de carro.</p>
-        <p>Reservar com bastante antecedência: março é alta demanda por causa do próprio MICFootball, que atrai famílias de fora da região.</p>
+        <p>Com a chegada do grupo de Girona ajustada para 22/03, a estadia cai de 8 para 6 noites — reduzindo o custo de hospedagem sem tirar nenhum dia da programação principal.</p>
       </div>
       <div class="stay-feats">
-        <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M3 18v2M21 18v2M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg><span>3 quartos — casal, casal e duplo (Fernando &amp; Arthur)</span></div>
+        <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M3 18v2M21 18v2M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg><span>3 quartos, para 5 adultos + Arthur</span></div>
         <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg><span>2 banheiros</span></div>
-        <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="6" y="3" width="12" height="18" rx="1.5"/><path d="M9 8h.01M9 12h.01M9 16h.01"/></svg><span>Elevador no prédio — importante para o Wanderley e a Valquíria</span></div>
+        <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="6" y="3" width="12" height="18" rx="1.5"/><path d="M9 8h.01M9 12h.01M9 16h.01"/></svg><span>Elevador no prédio</span></div>
         <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12h16M4 12l4-4M4 12l4 4"/></svg><span>Perto da estação de trem/ônibus</span></div>
         <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 21c3-6 6-9 9-9s6 3 9 9M12 12V3"/></svg><span>Perto do centro histórico e Rio Onyar</span></div>
       </div>
@@ -620,15 +636,15 @@
       <tr><td class="d">28/03</td><td>Domingo</td><td>Últimas finais. Encerramento da 25ª edição.</td></tr>
     </table>
     <div class="callout"><strong>Confirmado:</strong> o Matheus joga já em 24/03 — esse deixa de ser um dia livre e passa a ser dia de jogo prioritário.</div>
-    <div class="callout soft">Toda a família chega em Girona na véspera (23/03), então em 24/03 já estão todos descansados e prontos para acompanhar o jogo juntos desde o início.</div>
+    <div class="callout soft">Toda a família chega e se reúne em Girona já em 22/03. O dia 23/03 fica livre para conhecer Girona com calma, e em 24/03 todo mundo já está descansado, aclimatado e livre de compromissos turísticos — 100% disponível para o jogo do Matheus.</div>
   </section>
 
   <!-- ROTEIRO PARTE 1 -->
   <section id="roteiro-1" class="reveal">
     <div class="section-head">
       <span class="section-kicker">05 — Roteiro · 19 a 23 março</span>
-      <h2>Madri, com calma, antes de tudo.</h2>
-      <p>Nesses primeiros dias, só Andréa e Júlia estão em solo europeu. Wanderley, Valquíria, Fernando e Arthur seguem em São Paulo até a noite de 22/03.</p>
+      <h2>Madri e Girona, em paralelo.</h2>
+      <p>Andréa e Júlia aproveitam Madri com calma antes de seguir para Girona em 22/03 — mesmo dia em que Wanderley, Valquiria, Fernando e Arthur chegam via Barcelona. A família se reencontra na noite desse dia.</p>
     </div>
 
     <div class="stub" style="margin-bottom:18px;">
@@ -649,28 +665,26 @@
       <div class="stub-body">Parque do Retiro, Palácio de Cristal, Palácio Real, Catedral da Almudena, Estádio Santiago Bernabéu.</div>
     </div>
 
-    <div class="stub" style="margin-bottom:18px;">
-      <div class="stub-head"><span class="date">22/03</span><span class="day">Segunda</span></div>
-      <div class="stub-track">Madri</div>
-      <div class="stub-body">Dia livre: Museu do Prado, Bairro de Salamanca, compras, Templo de Debod.</div>
-    </div>
-
-    <div class="reunion-banner" style="border-color:var(--pine);">✈ NOITE DE 22/03 — WANDERLEY, VALQUÍRIA, FERNANDO E ARTHUR EMBARCAM DE SÃO PAULO RUMO A BARCELONA ✈</div>
-
     <div class="split-row">
       <div class="stub">
-        <div class="stub-head"><span class="date">23/03</span><span class="day">Terça</span></div>
+        <div class="stub-head"><span class="date">22/03</span><span class="day">Segunda</span></div>
         <div class="stub-track">Madri → Girona · Andréa &amp; Júlia</div>
-        <div class="stub-body">Trem Madrid → Girona no início da tarde (AVE / Iryo / Ouigo). Check-in no Airbnb.</div>
+        <div class="stub-body">Manhã livre em Madri (compras finais, opcional Templo de Debod). Trem Madrid → Girona à tarde (AVE / Iryo / Ouigo), chegando à noite.</div>
       </div>
       <div class="stub">
-        <div class="stub-head"><span class="date">23/03</span><span class="day">Terça</span></div>
-        <div class="stub-track">Barcelona → Girona · Wanderley, Valquíria, Fernando &amp; Arthur</div>
-        <div class="stub-body">Chegada via Barcelona, traslado até Girona. Check-in no Airbnb e noite tranquila — já descansados para o início dos jogos no dia seguinte.</div>
+        <div class="stub-head"><span class="date">22/03</span><span class="day">Segunda</span></div>
+        <div class="stub-track">Chegada · Wanderley, Valquiria, Fernando &amp; Arthur</div>
+        <div class="stub-body">Chegada em Barcelona, traslado até Girona, check-in no Airbnb. Tarde: passeio leve para adaptação — Rio Onyar, Ponte Eiffel, Praça da Independência, Rambla de la Llibertat.</div>
       </div>
     </div>
 
-    <div class="reunion-banner">✷ NOITE DE 23/03 — FAMÍLIA REUNIDA EM GIRONA · check-in definitivo · jantar em família ✷</div>
+    <div class="reunion-banner">✷ NOITE DE 22/03 — FAMÍLIA REUNIDA EM GIRONA · jantar de boas-vindas ✷</div>
+
+    <div class="stub" style="margin-top:18px;">
+      <div class="stub-head"><span class="date">23/03</span><span class="day">Terça</span></div>
+      <div class="stub-track">Girona histórica em família</div>
+      <div class="stub-body">Dia inteiro sem pressa, com todo mundo já reunido: Catedral de Girona, Bairro Judeu, Muralhas, casas coloridas do Rio Onyar e almoço na Praça da Independência. Véspera do início dos jogos.</div>
+    </div>
   </section>
 
   <!-- ROTEIRO PARTE 2 -->
@@ -682,7 +696,7 @@
 
     <div class="unified priority">
       <div class="side"><div class="date">24/03</div><div class="day">Quarta</div></div>
-      <div class="content"><div><span class="tag-pill">Prioridade</span><br><strong>Jogo do Matheus</strong> — Fase de Grupos (local a confirmar). Toda a família já está descansada e reunida em Girona desde a noite anterior. Se sobrar energia à noite, avaliar a Cerimônia de Inauguração do MIC (evento grande, gratuito).</div></div>
+      <div class="content"><div><span class="tag-pill">Prioridade: jogo do Matheus</span><br>Dia 100% dedicado ao torneio — <strong>jogo do Matheus</strong> na Fase de Grupos (local e horário a confirmar). Sem compromissos turísticos: a família já conheceu Girona no dia anterior, então é só torcer. Se sobrar energia à noite, avaliar a Cerimônia de Inauguração do MIC (evento grande, gratuito).</div></div>
     </div>
 
     <div class="unified">
@@ -690,20 +704,42 @@
       <div class="content">Jogos em <strong>Palamós</strong> (bate-volta). Entre partidas: porto, calçadão, praia, almoço na região. À noite: <strong>Verges</strong> — Procissão e Dansa de la Mort.</div>
     </div>
 
-
     <div class="unified">
       <div class="side"><div class="date">26/03</div><div class="day">Sexta</div></div>
-      <div class="content">Jogos em <strong>Figueres</strong> (bate-volta). Centro histórico, Rambla de Figueres e, se os horários permitirem, Museu Dalí. À noite, Girona com calma.</div>
+      <div class="content">Jogos em <strong>Figueres</strong> (bate-volta). Rambla de Figueres, centro histórico, cafés da região e, se os horários permitirem, Museu Dalí. À noite, retorno a Girona para jantar e descanso.</div>
     </div>
 
     <div class="unified">
       <div class="side"><div class="date">27/03</div><div class="day">Sábado</div></div>
-      <div class="content">Dia condicionado à MIC: havendo jogo, prioridade total. Sem jogo, Girona sem pressa — Rio Onyar, lembranças, tempo livre.</div>
+      <div class="content">
+        <div class="scenario-grid">
+          <div class="scenario-card">
+            <span class="tag-pill">Cenário A · Matheus segue na MIC</span>
+            <p>Dia dedicado ao torneio, com deslocamento conforme a tabela oficial. Tempo livre em Girona nos intervalos, se der.</p>
+          </div>
+          <div class="scenario-card">
+            <span class="tag-pill">Cenário B · Sem jogos</span>
+            <p>Café da manhã em Girona, passeio pela Rambla, compras de lembranças, almoço na Praça da Independência, fotos e último passeio pelo Rio Onyar. Jantar de despedida à noite.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="unified priority">
       <div class="side"><div class="date">28/03</div><div class="day">Domingo</div></div>
-      <div class="content">Se o Matheus estiver nas finais: acompanhar, premiação e fotos. Senão, manhã tranquila e malas. Tarde: Girona → Aeroporto de Barcelona. Noite: <strong>voo de volta a São Paulo.</strong></div>
+      <div class="content">
+        <div class="scenario-grid">
+          <div class="scenario-card">
+            <span class="tag-pill">Cenário A · Matheus nas finais</span>
+            <p>Acompanhar as finais da MIC, premiação, fotos e encerramento da 25ª edição.</p>
+          </div>
+          <div class="scenario-card">
+            <span class="tag-pill">Cenário B · Sem finais</span>
+            <p>Manhã tranquila, malas e uma última caminhada pelo centro. Início da tarde: Girona → Aeroporto de Barcelona.</p>
+          </div>
+        </div>
+        <p style="margin-top:12px; font-size:14.5px;">Nos dois cenários, a noite termina do mesmo jeito: <strong>voo de volta a São Paulo.</strong></p>
+      </div>
     </div>
   </section>
 
@@ -748,50 +784,70 @@
     <div class="section-head">
       <span class="section-kicker">08 — Investimento</span>
       <h2>Orçamento por passageiro.</h2>
-      <p>Andréa e Júlia já contam com seguro viagem via cartão/plano internacional. Para os demais, foi somado seguro + chip/eSIM.</p>
+      <p>Andréa e Júlia já contam com seguro viagem via cartão/plano internacional. Para os demais, foi somado seguro + chip/eSIM, no valor de R$ 800 por pessoa.</p>
     </div>
 
     <div class="budget-grid">
       <div class="budget-card">
         <div class="name">Andréa</div>
-        <div class="row"><span>Viagem</span><span>R$ 13.000</span></div>
+        <div class="row sub"><span>Passagem aérea</span><span>R$ 5.500</span></div>
+        <div class="row sub"><span>Hospedagem Madri</span><span>R$ 1.200</span></div>
+        <div class="row sub"><span>Hospedagem Girona</span><span>R$ 1.800</span></div>
+        <div class="row sub"><span>Alimentação</span><span>R$ 3.000</span></div>
+        <div class="row sub"><span>Transporte local</span><span>R$ 1.500</span></div>
         <div class="row"><span class="note">Seguro já incluso</span></div>
         <div class="row total"><span>Total</span><span>R$ 13.000</span></div>
       </div>
       <div class="budget-card">
         <div class="name">Júlia</div>
-        <div class="row"><span>Viagem</span><span>R$ 13.000</span></div>
+        <div class="row sub"><span>Passagem aérea</span><span>R$ 5.500</span></div>
+        <div class="row sub"><span>Hospedagem Madri</span><span>R$ 1.200</span></div>
+        <div class="row sub"><span>Hospedagem Girona</span><span>R$ 1.800</span></div>
+        <div class="row sub"><span>Alimentação</span><span>R$ 3.000</span></div>
+        <div class="row sub"><span>Transporte local</span><span>R$ 1.500</span></div>
         <div class="row"><span class="note">Seguro já incluso</span></div>
         <div class="row total"><span>Total</span><span>R$ 13.000</span></div>
       </div>
       <div class="budget-card">
         <div class="name">Wanderley</div>
-        <div class="row"><span>Viagem</span><span>R$ 12.000</span></div>
-        <div class="row"><span>Seguro + eSIM</span><span>R$ 500</span></div>
-        <div class="row total"><span>Total</span><span>R$ 12.500</span></div>
+        <div class="row sub"><span>Passagem aérea</span><span>R$ 6.000</span></div>
+        <div class="row sub"><span>Hospedagem Girona</span><span>R$ 1.800</span></div>
+        <div class="row sub"><span>Alimentação</span><span>R$ 2.200</span></div>
+        <div class="row sub"><span>Transporte local</span><span>R$ 1.000</span></div>
+        <div class="row"><span>Seguro + eSIM</span><span>R$ 800</span></div>
+        <div class="row total"><span>Total</span><span>R$ 11.800</span></div>
       </div>
       <div class="budget-card">
-        <div class="name">Valquíria</div>
-        <div class="row"><span>Viagem</span><span>R$ 12.000</span></div>
-        <div class="row"><span>Seguro + eSIM</span><span>R$ 500</span></div>
-        <div class="row total"><span>Total</span><span>R$ 12.500</span></div>
+        <div class="name">Valquiria</div>
+        <div class="row sub"><span>Passagem aérea</span><span>R$ 6.000</span></div>
+        <div class="row sub"><span>Hospedagem Girona</span><span>R$ 1.800</span></div>
+        <div class="row sub"><span>Alimentação</span><span>R$ 2.200</span></div>
+        <div class="row sub"><span>Transporte local</span><span>R$ 1.000</span></div>
+        <div class="row"><span>Seguro + eSIM</span><span>R$ 800</span></div>
+        <div class="row total"><span>Total</span><span>R$ 11.800</span></div>
       </div>
       <div class="budget-card">
         <div class="name">Fernando</div>
-        <div class="row"><span>Viagem</span><span>R$ 12.000</span></div>
-        <div class="row"><span>Seguro + eSIM</span><span>R$ 500</span></div>
-        <div class="row total"><span>Total</span><span>R$ 12.500</span></div>
+        <div class="row sub"><span>Passagem aérea</span><span>R$ 6.000</span></div>
+        <div class="row sub"><span>Hospedagem Girona</span><span>R$ 1.800</span></div>
+        <div class="row sub"><span>Alimentação</span><span>R$ 2.200</span></div>
+        <div class="row sub"><span>Transporte local</span><span>R$ 1.000</span></div>
+        <div class="row"><span>Seguro + eSIM</span><span>R$ 800</span></div>
+        <div class="row total"><span>Total</span><span>R$ 11.800</span></div>
       </div>
       <div class="budget-card">
         <div class="name">Arthur</div>
-        <div class="row"><span>Viagem</span><span>R$ 8.000</span></div>
-        <div class="row"><span>Seguro + eSIM</span><span>R$ 500</span></div>
-        <div class="row total"><span>Total</span><span>R$ 8.500</span></div>
+        <div class="row sub"><span>Passagem aérea</span><span>R$ 4.200</span></div>
+        <div class="row sub"><span>Hospedagem Girona</span><span>R$ 1.500</span></div>
+        <div class="row sub"><span>Alimentação</span><span>R$ 1.300</span></div>
+        <div class="row sub"><span>Transporte local</span><span>R$ 500</span></div>
+        <div class="row"><span>Seguro + eSIM</span><span>R$ 800</span></div>
+        <div class="row total"><span>Total</span><span>R$ 8.300</span></div>
       </div>
     </div>
 
     <div class="budget-total">
-      <div><div class="label">Total previsto da família</div><div class="amount">≈ R$ 72.000</div></div>
+      <div><div class="label">Total previsto da família</div><div class="amount">≈ R$ 69.700</div></div>
       <div class="mono" style="font-size:13px; color:#cdd6e6; max-width:340px;">Passagens, hospedagem, alimentação, transporte local, jogos, bate-voltas, Verges, seguro e margem para imprevistos.</div>
     </div>
 
@@ -800,9 +856,9 @@
         <h4>O orçamento contempla</h4>
         <ul>
           <li>Passagens aéreas (ida e volta)</li>
-          <li>3 noites em Madri (Andréa e Júlia)</li>
+          <li>2 noites em Madri (Andréa e Júlia)</li>
           <li>Trem Madrid → Girona</li>
-          <li>Airbnb em Girona (toda a estadia)</li>
+          <li>Airbnb em Girona — 6 noites (22 a 28/03)</li>
           <li>Alimentação</li>
         </ul>
       </div>
@@ -813,7 +869,7 @@
           <li>Entrada nos jogos da MIC (gratuita)</li>
           <li>Bate-voltas a Palamós e Figueres</li>
           <li>Verges e a Dansa de la Mort</li>
-          <li>Seguro + eSIM para os 4 que ainda não têm</li>
+          <li>Seguro + eSIM para os 4 que ainda não têm (R$ 800/pessoa)</li>
         </ul>
       </div>
     </div>
@@ -827,17 +883,13 @@
     </div>
     <div class="checklist">
       <div class="check-item"><div class="check-box"></div><span>Reservar o Airbnb em Girona (Mercadal), com cancelamento flexível.</span></div>
-      <div class="check-item"><div class="check-box"></div><span>Reservar hotel em Madri (Petit Palace Arenal, Preciados ou Plaza Mayor) para Andréa e Júlia — 3 noites, 20 a 23/03.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Reservar hotel em Madri (Petit Palace Arenal, Preciados ou Plaza Mayor) para Andréa e Júlia — 2 noites, 20 a 22/03.</span></div>
       <div class="check-item"><div class="check-box"></div><span>Confirmar com a organização do MIC o campo e horário do jogo do Matheus em 24/03.</span></div>
-      <div class="check-item"><div class="check-box"></div><span>Decidir se a família vai emendar a Cerimônia de Inauguração na noite do dia 24, considerando o cansaço da chegada.</span></div>
-      <div class="check-item"><div class="check-box"></div><span>Reservar passagens: Andréa/Júlia para Madri em 19/03; Wanderley/Valquíria/Fernando/Arthur para Barcelona em 22/03.</span></div>
-      <div class="check-item"><div class="check-box"></div><span>Reservar trem Madrid → Girona para 23/03 com antecedência.</span></div>
-      <div class="check-item"><div class="check-box"></div><span>Verificar com a companhia aérea acomodações para idosos (assentos, mobilidade no aeroporto) para Wanderley e Valquíria.</span></div>
-      <div class="check-item"><div class="check-box"></div><span>Contratar seguro viagem e chip/eSIM para Wanderley, Valquíria, Fernando e Arthur.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Reservar passagens: Andréa/Júlia para Madri em 19/03; Wanderley/Valquiria/Fernando/Arthur para Barcelona em 22/03.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Reservar trem Madrid → Girona para a tarde de 22/03 com antecedência.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Contratar seguro viagem e chip/eSIM para Wanderley, Valquiria, Fernando e Arthur.</span></div>
       <div class="check-item"><div class="check-box"></div><span>Confirmar horários oficiais da Procissão de Verges para março de 2027.</span></div>
-      <div class="check-item"><div class="check-box"></div><span>Verificar necessidade de visto — brasileiros entram no Schengen sem visto por até 90 dias.</span></div>
     </div>
-  </section>
 
 </main>
 
