@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espanha 2027 — Roteiro da Família</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#152238;
+    --ink-soft:#3c4a63;
+    --parchment:#f7f2e6;
+    --parchment-deep:#efe6d3;
+    --brass:#b8923e;
+    --brass-soft:#dcc48f;
+    --terracotta:#b2472b;
+    --pine:#1f5c52;
+    --paper-line:rgba(21,34,56,0.12);
+    --shadow: 0 18px 40px rgba(21,34,56,0.12);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'Public Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    color:var(--ink);
+  }
+
+  a{ color:var(--pine); }
+
+  .wrap{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------------- HERO ---------------- */
+  .hero{
+    background:
+      radial-gradient(circle at 12% 18%, rgba(184,146,62,0.16), transparent 42%),
+      radial-gradient(circle at 88% 82%, rgba(31,92,82,0.28), transparent 45%),
+      linear-gradient(160deg, #101b30 0%, #152238 55%, #1b2c47 100%);
+    color:#f4ecd9;
+    padding:88px 28px 72px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(244,236,217,0.035) 0px, rgba(244,236,217,0.035) 1px, transparent 1px, transparent 64px);
+    pointer-events:none;
+  }
+  .hero-inner{ max-width:1040px; margin:0 auto; position:relative; }
+  .hero-eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    font-size:12px;
+    color:var(--brass-soft);
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .hero-eyebrow .rule{ flex:1; height:1px; background:linear-gradient(90deg, var(--brass-soft), transparent); }
+  .hero h1{
+    color:#f8f2e2;
+    font-size:clamp(42px, 7vw, 78px);
+    line-height:1.03;
+    margin:22px 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 em{ font-style:italic; color:var(--brass-soft); font-weight:500; }
+  .hero-sub{
+    font-size:19px;
+    max-width:560px;
+    color:#cdd6e6;
+    margin-top:16px;
+  }
+  .route-strip{
+    margin-top:44px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:10px 4px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.04em;
+    color:#f4ecd9;
+  }
+  .route-chip{
+    border:1px solid rgba(244,236,217,0.35);
+    border-radius:999px;
+    padding:8px 16px;
+    background:rgba(244,236,217,0.06);
+  }
+  .route-arrow{ color:var(--brass-soft); padding:0 2px; }
+  .hero-meta{
+    margin-top:56px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    border-top:1px solid rgba(244,236,217,0.18);
+    padding-top:28px;
+  }
+  .hero-meta div .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass-soft);
+    margin-bottom:6px;
+  }
+  .hero-meta div .value{ font-size:16px; color:#f4ecd9; }
+
+  /* ---------------- SECTION SCAFFOLD ---------------- */
+  section{ padding:76px 0; }
+  .section-head{ max-width:640px; margin-bottom:40px; }
+  .section-kicker{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--terracotta);
+    display:block;
+    margin-bottom:14px;
+  }
+  .section-head h2{ font-size:clamp(28px,3.6vw,40px); }
+  .section-head p{ margin-top:14px; color:var(--ink-soft); font-size:16.5px; }
+
+  /* ---------------- PARTICIPANTS ---------------- */
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .tag{
+    background:#fff;
+    border:1px solid var(--paper-line);
+    border-radius:10px;
+    padding:14px 18px;
+    box-shadow:var(--shadow);
+    min-width:168px;
+    position:relative;
+  }
+  .tag::before{
+    content:"";
+    position:absolute; left:-1px; top:14px; bottom:14px; width:4px;
+    background:var(--brass);
+    border-radius:2px;
+  }
+  .tag .name{ font-family:'Fraunces', serif; font-weight:600; font-size:18px; }
+  .tag .role{ font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); margin-top:4px; }
+  .tag .route{ font-size:12.5px; color:var(--pine); margin-top:8px; font-family:'IBM Plex Mono', monospace; }
+  .tag.dim{ opacity:0.72; }
+
+  /* ---------------- ACCOMMODATION ---------------- */
+  .stay-card{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:0;
+    background:var(--ink);
+    color:#f4ecd9;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .stay-copy{ padding:44px 40px; }
+  .stay-copy .stay-kicker{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--brass-soft); }
+  .stay-copy h3{ color:#f8f2e2; font-size:28px; margin-top:10px; }
+  .stay-copy p{ color:#cdd6e6; margin-top:14px; font-size:15.5px; }
+  .stay-feats{
+    padding:44px 40px;
+    background:rgba(244,236,217,0.05);
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    border-left:1px solid rgba(244,236,217,0.14);
+  }
+  .feat{ display:flex; gap:14px; align-items:flex-start; }
+  .feat svg{ flex:none; width:20px; height:20px; stroke:var(--brass-soft); margin-top:2px; }
+  .feat span{ font-size:14.5px; color:#e9e2d0; }
+
+  /* ---------------- OFFICIAL PROGRAM TABLE ---------------- */
+  .prog{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .prog th{
+    background:var(--ink);
+    color:var(--brass-soft);
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-size:11.5px;
+    text-align:left;
+    padding:14px 18px;
+  }
+  .prog td{ padding:16px 18px; border-bottom:1px solid var(--paper-line); font-size:14.5px; vertical-align:top; }
+  .prog tr:last-child td{ border-bottom:none; }
+  .prog tr:nth-child(even) td{ background:var(--parchment-deep); }
+  .prog .d{ font-family:'IBM Plex Mono', monospace; font-weight:600; color:var(--terracotta); white-space:nowrap; }
+  .prog .day-highlight td{ background:#fbeee1 !important; }
+
+  .callout{
+    margin-top:22px;
+    border-left:3px solid var(--terracotta);
+    background:#fff;
+    padding:16px 20px;
+    border-radius:0 10px 10px 0;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    box-shadow:var(--shadow);
+  }
+  .callout strong{ color:var(--ink); }
+  .callout.soft{ border-left-color:var(--brass); }
+
+  /* ---------------- TIMELINE / TICKETS ---------------- */
+  .timeline{ position:relative; }
+  .timeline-spine{
+    position:absolute;
+    left:50%;
+    top:0; bottom:0;
+    width:1px;
+    background:repeating-linear-gradient(180deg, var(--brass) 0 8px, transparent 8px 16px);
+    transform:translateX(-50%);
+  }
+  .split-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+    margin-bottom:26px;
+    position:relative;
+  }
+  .stub{
+    background:#fff;
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  .stub-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 20px;
+    background:var(--ink);
+    color:#f4ecd9;
+  }
+  .stub-head .date{ font-family:'IBM Plex Mono', monospace; font-weight:600; letter-spacing:0.04em; }
+  .stub-head .day{ font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; color:var(--brass-soft); letter-spacing:0.1em; }
+  .stub-track{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.12em; color:var(--pine); padding:10px 20px 0; }
+  .stub-body{ padding:10px 20px 22px; font-size:14.5px; color:var(--ink-soft); }
+  .stub .perf{
+    position:relative;
+    height:0;
+  }
+  .stub .perf::before, .stub .perf::after{
+    content:"";
+    position:absolute;
+    top:-8px;
+    width:16px; height:16px;
+    background:var(--parchment);
+    border-radius:50%;
+  }
+  .stub .perf::before{ left:-8px; }
+  .stub .perf::after{ right:-8px; }
+
+  .unified{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    align-items:stretch;
+    gap:0;
+    background:#fff;
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    margin-bottom:20px;
+    overflow:hidden;
+  }
+  .unified .side{
+    background:var(--ink);
+    color:#f4ecd9;
+    padding:22px 16px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+  .unified .side .date{ font-family:'IBM Plex Mono', monospace; font-weight:700; font-size:20px; }
+  .unified .side .day{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; text-transform:uppercase; color:var(--brass-soft); margin-top:4px; letter-spacing:0.1em; }
+  .unified .content{ padding:26px; font-size:15px; color:var(--ink-soft); }
+  .unified.priority .side{ background:var(--terracotta); }
+  .unified.priority .side .day{ color:#fbeadf; }
+  .unified .content strong{ color:var(--ink); }
+  .tag-pill{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    background:var(--parchment-deep);
+    color:var(--terracotta);
+    border-radius:999px;
+    padding:3px 10px;
+    margin-bottom:8px;
+  }
+
+  .reunion-banner{
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.08em;
+    color:var(--pine);
+    margin:8px 0 34px;
+    padding:14px;
+    border-top:1px dashed var(--brass);
+    border-bottom:1px dashed var(--brass);
+  }
+
+  /* ---------------- VERGES ---------------- */
+  .verges{
+    background:linear-gradient(160deg, #1b1420 0%, #241b28 60%, #2b1f22 100%);
+    color:#ece2d6;
+    border-radius:20px;
+    padding:52px 46px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .verges::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:radial-gradient(circle, rgba(236,226,214,0.05) 1px, transparent 1px);
+    background-size:22px 22px;
+    opacity:0.5;
+  }
+  .verges-inner{ position:relative; max-width:620px; }
+  .verges .flame{ width:30px; height:30px; stroke:var(--terracotta); }
+  .verges h3{ color:#f4ecd9; font-size:30px; margin-top:18px; }
+  .verges p{ color:#cfc3ba; margin-top:14px; font-size:15px; }
+  .verges ul{ margin:18px 0 0; padding-left:20px; color:#d8cdc4; font-size:14.5px; }
+  .verges li{ margin-bottom:8px; }
+  .verges .note{
+    margin-top:24px;
+    border-left:3px solid var(--terracotta);
+    padding:14px 18px;
+    background:rgba(178,71,43,0.12);
+    border-radius:0 10px 10px 0;
+    font-size:14px;
+    color:#f1e3da;
+  }
+
+  /* ---------------- TRANSPORT (departures board) ---------------- */
+  .board{
+    background:var(--ink);
+    border-radius:14px;
+    padding:8px 0;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .board-row{
+    display:grid;
+    grid-template-columns:2fr 2fr 1fr;
+    gap:12px;
+    padding:14px 26px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+    color:#e9e2d0;
+    border-bottom:1px solid rgba(244,236,217,0.08);
+  }
+  .board-row.head{
+    color:var(--brass-soft);
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    font-size:11px;
+    border-bottom:1px solid rgba(244,236,217,0.2);
+  }
+  .board-row:last-child{ border-bottom:none; }
+  .board-row .dur{ color:var(--brass-soft); text-align:right; }
+
+  /* ---------------- BUDGET ---------------- */
+  .budget-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+  }
+  .budget-card{
+    background:#fff;
+    border-radius:14px;
+    padding:22px 22px 20px;
+    box-shadow:var(--shadow);
+    border-top:3px solid var(--brass);
+  }
+  .budget-card .name{ font-family:'Fraunces', serif; font-weight:600; font-size:19px; }
+  .budget-card .row{ display:flex; justify-content:space-between; font-size:13px; color:var(--ink-soft); margin-top:12px; }
+  .budget-card .row.total{ margin-top:10px; padding-top:10px; border-top:1px dashed var(--paper-line); font-weight:600; color:var(--ink); font-size:15px; }
+  .budget-card .note{ font-size:11px; font-style:italic; color:var(--pine); }
+
+  .budget-total{
+    margin-top:26px;
+    background:var(--ink);
+    color:#f4ecd9;
+    border-radius:14px;
+    padding:26px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    box-shadow:var(--shadow);
+  }
+  .budget-total .label{ font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.12em; color:var(--brass-soft); }
+  .budget-total .amount{ font-family:'Fraunces', serif; font-size:34px; font-weight:600; }
+
+  .includes{
+    margin-top:34px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+  }
+  .includes h4{ font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--terracotta); margin-bottom:14px; }
+  .includes ul{ margin:0; padding:0; list-style:none; }
+  .includes li{ font-size:14.5px; color:var(--ink-soft); padding:7px 0 7px 22px; position:relative; border-bottom:1px solid var(--paper-line); }
+  .includes li:last-child{ border-bottom:none; }
+  .includes li::before{ content:"✓"; position:absolute; left:0; color:var(--pine); font-weight:700; }
+
+  /* ---------------- CHECKLIST ---------------- */
+  .checklist{ display:flex; flex-direction:column; gap:0; }
+  .check-item{
+    display:flex;
+    gap:16px;
+    padding:16px 0;
+    border-bottom:1px solid var(--paper-line);
+    align-items:flex-start;
+  }
+  .check-item:last-child{ border-bottom:none; }
+  .check-box{
+    flex:none;
+    width:20px; height:20px;
+    border:1.5px solid var(--brass);
+    border-radius:5px;
+    margin-top:2px;
+  }
+  .check-item span{ font-size:15px; color:var(--ink-soft); }
+
+  footer{
+    background:var(--ink);
+    color:#a9b4c8;
+    text-align:center;
+    padding:44px 28px 54px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.04em;
+  }
+  footer .brand{ font-family:'Fraunces', serif; color:#f4ecd9; font-size:19px; margin-bottom:10px; letter-spacing:0.02em; }
+  footer a{ color:var(--brass-soft); text-decoration:none; }
+
+  /* ---------------- RESPONSIVE ---------------- */
+  @media (max-width: 760px){
+    .hero{ padding:64px 20px 52px; }
+    .hero-meta{ grid-template-columns:1fr; gap:16px; }
+    .stay-card{ grid-template-columns:1fr; }
+    .split-row{ grid-template-columns:1fr; }
+    .timeline-spine{ display:none; }
+    .unified{ grid-template-columns:88px 1fr; }
+    .budget-grid{ grid-template-columns:1fr 1fr; }
+    .includes{ grid-template-columns:1fr; }
+    .prog{ display:block; overflow-x:auto; }
+  }
+  @media (max-width: 480px){
+    .budget-grid{ grid-template-columns:1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
+  }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span>Dossiê de Viagem</span><span class="rule"></span><span>Família · 2027</span></div>
+    <h1>Espanha, <em>com o Matheus</em><br>em campo.</h1>
+    <p class="hero-sub">Dez dias acompanhando a 25ª edição do MICFootball na Costa Brava — passando antes por Madri, reunindo a família em Girona, e fechando com a Dansa de la Mort de Verges na Quinta-feira Santa.</p>
+
+    <div class="route-strip">
+      <span class="route-chip">GRU</span><span class="route-arrow">✈</span><span class="route-chip">MAD</span>
+      <span class="route-arrow">·</span>
+      <span class="route-chip">GRU</span><span class="route-arrow">✈</span><span class="route-chip">BCN</span>
+      <span class="route-arrow">→</span><span class="route-chip">GIRONA</span>
+    </div>
+
+    <div class="hero-meta">
+      <div><div class="label">Período</div><div class="value">19 – 28 março 2027</div></div>
+      <div><div class="label">Base</div><div class="value">Girona, Catalunha</div></div>
+      <div><div class="label">Torneio</div><div class="value">MICFootball · 25ª edição</div></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- PARTICIPANTES -->
+  <section id="participantes" class="reveal">
+    <div class="section-head">
+      <span class="section-kicker">01 — Quem viaja</span>
+      <h2>Seis passageiros, duas rotas.</h2>
+      <p>Andréa e Júlia embarcam em 19/03 rumo a Madri. Wanderley, Valquíria, Fernando e Arthur embarcam depois, em 22/03, direto para Girona — com mais tempo de descanso em casa antes da viagem, pensando especialmente no Wanderley e na Valquíria.</p>
+    </div>
+    <div class="tags">
+      <div class="tag"><div class="name">Andréa</div><div class="role">Tia</div><div class="route">SP → MAD · 19/03</div></div>
+      <div class="tag"><div class="name">Júlia</div><div class="role">Prima</div><div class="route">SP → MAD · 19/03</div></div>
+      <div class="tag"><div class="name">Wanderley</div><div class="role">Avô</div><div class="route">SP → BCN → GIRONA · 22/03</div></div>
+      <div class="tag"><div class="name">Valquíria</div><div class="role">Avó</div><div class="route">SP → BCN → GIRONA · 22/03</div></div>
+      <div class="tag"><div class="name">Fernando</div><div class="role">Pai</div><div class="route">SP → BCN → GIRONA · 22/03</div></div>
+      <div class="tag"><div class="name">Arthur</div><div class="role">Irmão</div><div class="route">SP → BCN → GIRONA · 22/03</div></div>
+      <div class="tag dim"><div class="name">Matheus</div><div class="role">Atleta · já na Espanha</div><div class="route">Com a delegação</div></div>
+      <div class="tag dim"><div class="name">Roberta</div><div class="role">Mãe · já na Espanha</div><div class="route">Com a delegação</div></div>
+    </div>
+    <div class="callout soft" style="margin-top:26px;">Com dois idosos no grupo de Girona, esse espaçamento entre as duas partidas evita empilhar fusos e conexões — Wanderley e Valquíria ganham 3 dias a mais de descanso em casa antes de embarcar, e chegam já perto do início dos jogos.</div>
+  </section>
+
+  <!-- HOSPEDAGEM GIRONA -->
+  <section id="hospedagem" class="reveal">
+    <div class="section-head">
+      <span class="section-kicker">02 — Onde ficam · Girona</span>
+      <h2>Um único Airbnb, no coração de Girona.</h2>
+    </div>
+    <div class="stay-card">
+      <div class="stay-copy">
+        <span class="stay-kicker">Mercadal, Girona</span>
+        <h3>Base para os dez dias</h3>
+        <p>Bairro central e plano, a poucos passos da estação de trem/ônibus e do centro histórico — ideal para as idas e vindas dos dias de jogo, sem depender de carro.</p>
+        <p>Reservar com bastante antecedência: março é alta demanda por causa do próprio MICFootball, que atrai famílias de fora da região.</p>
+      </div>
+      <div class="stay-feats">
+        <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M3 18v2M21 18v2M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg><span>3 quartos — casal, casal e duplo (Fernando &amp; Arthur)</span></div>
+        <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg><span>2 banheiros</span></div>
+        <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="6" y="3" width="12" height="18" rx="1.5"/><path d="M9 8h.01M9 12h.01M9 16h.01"/></svg><span>Elevador no prédio — importante para o Wanderley e a Valquíria</span></div>
+        <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12h16M4 12l4-4M4 12l4 4"/></svg><span>Perto da estação de trem/ônibus</span></div>
+        <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 21c3-6 6-9 9-9s6 3 9 9M12 12V3"/></svg><span>Perto do centro histórico e Rio Onyar</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOSPEDAGEM MADRI -->
+  <section id="hospedagem-madri" class="reveal">
+    <div class="section-head">
+      <span class="section-kicker">03 — Onde ficam · Madri</span>
+      <h2>Três opções, todas a poucos passos do Sol.</h2>
+      <p>Para os três dias de Andréa e Júlia em Madri, a rede Petit Palace é uma boa aposta: hotéis boutique, bem localizados, com elevador e diárias de padrão confortável. As três opções abaixo ficam a menos de 10 minutos a pé umas das outras.</p>
+    </div>
+    <div class="budget-grid">
+      <div class="budget-card" style="border-top-color:var(--pine);">
+        <div class="name">Petit Palace Arenal</div>
+        <div class="row"><span style="max-width:100%;">Calle del Arenal, 16 — a 2 min a pé do Sol e da Ópera</span></div>
+        <div class="row" style="margin-top:10px;"><span class="note">3★ · café da manhã elogiado · quartos com opção de varanda</span></div>
+      </div>
+      <div class="budget-card" style="border-top-color:var(--pine);">
+        <div class="name">Petit Palace Preciados</div>
+        <div class="row"><span style="max-width:100%;">Calle de Galdo, 2 — a 170m da Puerta del Sol, ao lado da Rua Preciados</span></div>
+        <div class="row" style="margin-top:10px;"><span class="note">3★ · prédio de 1917 restaurado · terraço no último andar</span></div>
+      </div>
+      <div class="budget-card" style="border-top-color:var(--terracotta);">
+        <div class="name">Petit Palace Plaza Mayor</div>
+        <div class="row"><span style="max-width:100%;">Ao lado da Plaza Mayor, de frente para o Mercado de San Miguel</span></div>
+        <div class="row" style="margin-top:10px;"><span class="note">3★ · a 5 min do Palácio Real · a mais próxima do roteiro de 20/03</span></div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:22px;"><strong>Sugestão:</strong> como o primeiro dia do roteiro (20/03) já passa por Plaza Mayor e Mercado de San Miguel, o <strong>Petit Palace Plaza Mayor</strong> é a opção mais conveniente para não caminhar tanto com a bagagem no dia da chegada. As outras duas ficam a poucos quarteirões e são igualmente boas — vale comparar diárias e disponibilidade mais perto da data.</div>
+  </section>
+
+  <!-- PROGRAMA OFICIAL -->
+  <section id="torneio" class="reveal">
+    <div class="section-head">
+      <span class="section-kicker">04 — O torneio</span>
+      <h2>Programação oficial do MIC.</h2>
+      <p>23 a 28 de março de 2027, com jogos, fase final e finais distribuídos pela Costa Brava. Entrada gratuita em todos os campos, inclusive na abertura e nas finais.</p>
+    </div>
+    <table class="prog">
+      <tr><th>Data</th><th>Dia</th><th>Programação oficial</th></tr>
+      <tr><td class="d">23/03</td><td>Terça</td><td>Equipes com alojamento chegam aos hotéis oficiais do torneio.</td></tr>
+      <tr class="day-highlight"><td class="d">24/03</td><td>Quarta</td><td>Inauguração (+7.000 pessoas) e início da Fase de Grupos — <strong>Matheus joga neste dia.</strong></td></tr>
+      <tr><td class="d">25/03</td><td>Quinta</td><td>Segundo dia da Fase de Grupos.</td></tr>
+      <tr><td class="d">26/03</td><td>Sexta</td><td>Fase Final e Fase de Consolação.</td></tr>
+      <tr><td class="d">27/03</td><td>Sábado</td><td>Partidos eliminatórios e primeiras finais.</td></tr>
+      <tr><td class="d">28/03</td><td>Domingo</td><td>Últimas finais. Encerramento da 25ª edição.</td></tr>
+    </table>
+    <div class="callout"><strong>Confirmado:</strong> o Matheus joga já em 24/03 — esse deixa de ser um dia livre e passa a ser dia de jogo prioritário.</div>
+    <div class="callout soft">Esse mesmo dia é também o de chegada de Wanderley, Valquíria, Fernando e Arthur na Espanha — veja a recomendação de como equilibrar os dois na próxima seção.</div>
+  </section>
+
+  <!-- ROTEIRO PARTE 1 -->
+  <section id="roteiro-1" class="reveal">
+    <div class="section-head">
+      <span class="section-kicker">05 — Roteiro · 19 a 23 março</span>
+      <h2>Madri, com calma, antes de tudo.</h2>
+      <p>Nesses primeiros dias, só Andréa e Júlia estão em solo europeu. Wanderley, Valquíria, Fernando e Arthur seguem em São Paulo até a noite de 22/03.</p>
+    </div>
+
+    <div class="stub" style="margin-bottom:18px;">
+      <div class="stub-head"><span class="date">19/03</span><span class="day">Sexta</span></div>
+      <div class="stub-track">SP → MAD · Andréa &amp; Júlia</div>
+      <div class="stub-body">Embarque em São Paulo rumo a Madri.</div>
+    </div>
+
+    <div class="stub" style="margin-bottom:18px;">
+      <div class="stub-head"><span class="date">20/03</span><span class="day">Sábado</span></div>
+      <div class="stub-track">Madri</div>
+      <div class="stub-body">Check-in em Madri. Plaza Mayor, Mercado de San Miguel, Puerta del Sol, Gran Vía.</div>
+    </div>
+
+    <div class="stub" style="margin-bottom:18px;">
+      <div class="stub-head"><span class="date">21/03</span><span class="day">Domingo</span></div>
+      <div class="stub-track">Madri</div>
+      <div class="stub-body">Parque do Retiro, Palácio de Cristal, Palácio Real, Catedral da Almudena, Estádio Santiago Bernabéu.</div>
+    </div>
+
+    <div class="stub" style="margin-bottom:18px;">
+      <div class="stub-head"><span class="date">22/03</span><span class="day">Segunda</span></div>
+      <div class="stub-track">Madri</div>
+      <div class="stub-body">Dia livre: Museu do Prado, Bairro de Salamanca, compras, Templo de Debod.</div>
+    </div>
+
+    <div class="reunion-banner" style="border-color:var(--pine);">✈ NOITE DE 22/03 — WANDERLEY, VALQUÍRIA, FERNANDO E ARTHUR EMBARCAM DE SÃO PAULO RUMO A BARCELONA ✈</div>
+
+    <div class="stub" style="margin-bottom:18px;">
+      <div class="stub-head"><span class="date">23/03</span><span class="day">Terça</span></div>
+      <div class="stub-track">Madri → Girona · Andréa &amp; Júlia</div>
+      <div class="stub-body">Trem Madrid → Girona no início da tarde (AVE / Iryo / Ouigo). Check-in no Airbnb, primeira noite a sós em Girona antes do resto da família chegar.</div>
+    </div>
+
+    <div class="reunion-banner">✷ 24/03 — FAMÍLIA REUNIDA EM GIRONA ✷</div>
+  </section>
+
+  <!-- ROTEIRO PARTE 2 -->
+  <section id="roteiro-2" class="reveal">
+    <div class="section-head">
+      <span class="section-kicker">06 — Roteiro · 24 a 28 março</span>
+      <h2>Uma família, um time para torcer.</h2>
+    </div>
+
+    <div class="unified priority">
+      <div class="side"><div class="date">24/03</div><div class="day">Quarta</div></div>
+      <div class="content"><div><span class="tag-pill">Chegada + Prioridade</span><br>Wanderley, Valquíria, Fernando e Arthur chegam via Barcelona e seguem para Girona — mesmo dia do <strong>jogo do Matheus</strong> (Fase de Grupos, local a confirmar).<br><br><strong>Recomendação:</strong> depois de ~24h de viagem, priorizar o descanso de Wanderley e Valquíria no Airbnb. Andréa e Júlia — já aclimatadas — acompanham o jogo e representam a torcida da família nesse dia. Reencontro e jantar tranquilo à noite, todos juntos.</div></div>
+    </div>
+
+    <div class="unified">
+      <div class="side"><div class="date">25/03</div><div class="day">Quinta</div></div>
+      <div class="content">Primeiro dia com todos juntos nos jogos: <strong>Palamós</strong> (bate-volta). Entre partidas: porto, calçadão, praia, almoço na região. À noite: <strong>Verges</strong> — Procissão e Dansa de la Mort.</div>
+    </div>
+
+
+    <div class="unified">
+      <div class="side"><div class="date">26/03</div><div class="day">Sexta</div></div>
+      <div class="content">Jogos em <strong>Figueres</strong> (bate-volta). Centro histórico, Rambla de Figueres e, se os horários permitirem, Museu Dalí. À noite, Girona com calma.</div>
+    </div>
+
+    <div class="unified">
+      <div class="side"><div class="date">27/03</div><div class="day">Sábado</div></div>
+      <div class="content">Dia condicionado à MIC: havendo jogo, prioridade total. Sem jogo, Girona sem pressa — Rio Onyar, lembranças, tempo livre.</div>
+    </div>
+
+    <div class="unified priority">
+      <div class="side"><div class="date">28/03</div><div class="day">Domingo</div></div>
+      <div class="content">Se o Matheus estiver nas finais: acompanhar, premiação e fotos. Senão, manhã tranquila e malas. Tarde: Girona → Aeroporto de Barcelona. Noite: <strong>voo de volta a São Paulo.</strong></div>
+    </div>
+  </section>
+
+  <!-- VERGES -->
+  <section id="verges" class="reveal">
+    <div class="verges">
+      <div class="verges-inner">
+        <svg class="flame" viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M12 2c1 3-2 4-2 7a4 4 0 0 0 8 0c0-2-1-3-1-5 2 1 3 4 3 7a6 6 0 0 1-12 0c0-4 2-5 4-9z"/></svg>
+        <h3>A Dansa de la Mort, em Verges</h3>
+        <p>Um programa fora do circuito turístico comum — vale contextualizar para toda a família antes da noite de 25/03.</p>
+        <ul>
+          <li>Acontece todo ano na noite de Quinta-feira Santa, numa pequena vila a ~30 min de Girona.</li>
+          <li>Uma das últimas "Danças da Morte" medievais ainda vivas na Europa, com origem no século XVII.</li>
+          <li>A procissão começa por volta das 22h; a dança em si — cinco figuras vestidas de esqueleto ao som de tambores — acontece perto da meia-noite.</li>
+          <li>Gratuita e aberta ao público, declarada Festa de Interesse Nacional pela Generalitat da Catalunya.</li>
+        </ul>
+        <div class="note">Evento longo e noturno, com ápice à meia-noite — vale já combinar em família até que horas pretendem ficar, pensando no Arthur e no cansaço do dia de jogo.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSPORTES -->
+  <section id="transporte" class="reveal">
+    <div class="section-head">
+      <span class="section-kicker">07 — Como se locomover</span>
+      <h2>O painel de partidas da semana.</h2>
+    </div>
+    <div class="board">
+      <div class="board-row head"><span>Trajeto</span><span>Meio de transporte</span><span class="dur">Duração</span></div>
+      <div class="board-row"><span>Aeroporto BCN → Girona</span><span>Ônibus direto</span><span class="dur">1h15–1h30</span></div>
+      <div class="board-row"><span>Madrid → Girona</span><span>Trem AVE / Iryo / Ouigo</span><span class="dur">3h30–4h</span></div>
+      <div class="board-row"><span>Girona → Palamós</span><span>Ônibus / compartilhado</span><span class="dur">~1h–1h20</span></div>
+      <div class="board-row"><span>Girona → Figueres</span><span>Trem</span><span class="dur">~20–30 min</span></div>
+      <div class="board-row"><span>Girona → Verges</span><span>Táxi / compartilhado</span><span class="dur">~30 min</span></div>
+      <div class="board-row"><span>Girona → Aeroporto BCN</span><span>Ônibus direto / transfer</span><span class="dur">1h15–1h30</span></div>
+    </div>
+    <div class="callout">Girona não tem trem direto para Palamós — o trajeto é sempre de ônibus (Moventis/Sarfa). Confira horários com antecedência; as saídas costumam ser a cada poucas horas.</div>
+  </section>
+
+  <!-- ORÇAMENTO -->
+  <section id="orcamento" class="reveal">
+    <div class="section-head">
+      <span class="section-kicker">08 — Investimento</span>
+      <h2>Orçamento por passageiro.</h2>
+      <p>Andréa e Júlia já contam com seguro viagem via cartão/plano internacional. Para os demais, foi somado seguro + chip/eSIM.</p>
+    </div>
+
+    <div class="budget-grid">
+      <div class="budget-card">
+        <div class="name">Andréa</div>
+        <div class="row"><span>Viagem</span><span>R$ 13.000</span></div>
+        <div class="row"><span class="note">Seguro já incluso</span></div>
+        <div class="row total"><span>Total</span><span>R$ 13.000</span></div>
+      </div>
+      <div class="budget-card">
+        <div class="name">Júlia</div>
+        <div class="row"><span>Viagem</span><span>R$ 13.000</span></div>
+        <div class="row"><span class="note">Seguro já incluso</span></div>
+        <div class="row total"><span>Total</span><span>R$ 13.000</span></div>
+      </div>
+      <div class="budget-card">
+        <div class="name">Wanderley</div>
+        <div class="row"><span>Viagem</span><span>R$ 12.000</span></div>
+        <div class="row"><span>Seguro + eSIM</span><span>R$ 500</span></div>
+        <div class="row total"><span>Total</span><span>R$ 12.500</span></div>
+      </div>
+      <div class="budget-card">
+        <div class="name">Valquíria</div>
+        <div class="row"><span>Viagem</span><span>R$ 12.000</span></div>
+        <div class="row"><span>Seguro + eSIM</span><span>R$ 500</span></div>
+        <div class="row total"><span>Total</span><span>R$ 12.500</span></div>
+      </div>
+      <div class="budget-card">
+        <div class="name">Fernando</div>
+        <div class="row"><span>Viagem</span><span>R$ 12.000</span></div>
+        <div class="row"><span>Seguro + eSIM</span><span>R$ 500</span></div>
+        <div class="row total"><span>Total</span><span>R$ 12.500</span></div>
+      </div>
+      <div class="budget-card">
+        <div class="name">Arthur</div>
+        <div class="row"><span>Viagem</span><span>R$ 8.000</span></div>
+        <div class="row"><span>Seguro + eSIM</span><span>R$ 500</span></div>
+        <div class="row total"><span>Total</span><span>R$ 8.500</span></div>
+      </div>
+    </div>
+
+    <div class="budget-total">
+      <div><div class="label">Total previsto da família</div><div class="amount">≈ R$ 72.000</div></div>
+      <div class="mono" style="font-size:13px; color:#cdd6e6; max-width:340px;">Passagens, hospedagem, alimentação, transporte local, jogos, bate-voltas, Verges, seguro e margem para imprevistos.</div>
+    </div>
+
+    <div class="includes">
+      <div>
+        <h4>O orçamento contempla</h4>
+        <ul>
+          <li>Passagens aéreas (ida e volta)</li>
+          <li>3 noites em Madri (Andréa e Júlia)</li>
+          <li>Trem Madrid → Girona</li>
+          <li>Airbnb em Girona (toda a estadia)</li>
+          <li>Alimentação</li>
+        </ul>
+      </div>
+      <div>
+        <h4>E também</h4>
+        <ul>
+          <li>Transporte local completo</li>
+          <li>Entrada nos jogos da MIC (gratuita)</li>
+          <li>Bate-voltas a Palamós e Figueres</li>
+          <li>Verges e a Dansa de la Mort</li>
+          <li>Seguro + eSIM para os 4 que ainda não têm</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROXIMOS PASSOS -->
+  <section id="proximos" class="reveal" style="padding-bottom:96px;">
+    <div class="section-head">
+      <span class="section-kicker">09 — Antes de embarcar</span>
+      <h2>Próximos passos.</h2>
+    </div>
+    <div class="checklist">
+      <div class="check-item"><div class="check-box"></div><span>Reservar o Airbnb em Girona (Mercadal), com cancelamento flexível.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Reservar hotel em Madri (Petit Palace Arenal, Preciados ou Plaza Mayor) para Andréa e Júlia — 3 noites, 20 a 23/03.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Confirmar com a organização do MIC o campo e horário do jogo do Matheus em 24/03 — essencial para calibrar o quanto Wanderley e Valquíria vão poder participar nesse dia.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Decidir se a família vai emendar a Cerimônia de Inauguração na noite do dia 24, considerando o cansaço da chegada.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Reservar passagens: Andréa/Júlia para Madri em 19/03; Wanderley/Valquíria/Fernando/Arthur para Barcelona em 22/03.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Reservar trem Madrid → Girona para 23/03 com antecedência.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Verificar com a companhia aérea acomodações para idosos (assentos, mobilidade no aeroporto) para Wanderley e Valquíria.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Contratar seguro viagem e chip/eSIM para Wanderley, Valquíria, Fernando e Arthur.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Confirmar horários oficiais da Procissão de Verges para março de 2027.</span></div>
+      <div class="check-item"><div class="check-box"></div><span>Verificar necessidade de visto — brasileiros entram no Schengen sem visto por até 90 dias.</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="brand">Espanha 2027 · Roteiro da Família</div>
+  <div>MICFootball — <a href="https://micfootball.com" target="_blank" rel="noopener">micfootball.com</a> · info@micfootball.com · +34 93 589 70 20</div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
